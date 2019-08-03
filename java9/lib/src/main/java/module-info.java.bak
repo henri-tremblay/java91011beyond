@@ -1,0 +1,7 @@
+/*
+ * Copyright 2018-2019 Henri Tremblay.
+ */
+ module pro.tremblay.java9.lib {
+  exports pro.tremblay.java9.lib;
+//  opens pro.tremblay.java9.lib;
+}

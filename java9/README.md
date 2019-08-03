@@ -1,0 +1,4 @@
+- Auto-module
+- Named auto-module
+- Module
+- Open
