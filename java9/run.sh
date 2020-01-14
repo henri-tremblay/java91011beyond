@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copyright 2018-2019 Henri Tremblay.
+# Copyright 2018-2020 Henri Tremblay.
 #
 
 

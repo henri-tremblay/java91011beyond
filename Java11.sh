@@ -1,6 +1,6 @@
 #!/Library/Java/JavaVirtualMachines/jdk-12.jdk/Contents/Home/bin/java --source 11
 #
-# Copyright 2018-2019 Henri Tremblay.
+# Copyright 2018-2020 Henri Tremblay.
 #
 
 
