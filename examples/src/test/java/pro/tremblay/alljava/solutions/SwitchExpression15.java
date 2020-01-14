@@ -17,9 +17,12 @@ import static org.assertj.core.api.Assertions.assertThat;
  * - Add the missing break
  * - Change to the arrow syntax but still assign to weekDay
  * - Return directly
+ * - Show that it needs to be exhaustive
+ * - Yield with the old syntax
  *
  * @author Henri Tremblay
  */
+// https://openjdk.java.net/jeps/361
 public class SwitchExpression15 {
 
   @Test
@@ -93,11 +96,18 @@ public class SwitchExpression15 {
     return weekDay;
   }
 
-  private boolean isWeekDay5(DayOfWeek day) {
+  private boolean isWeekDay5a(DayOfWeek day) {
     return switch(day) {
       case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> true;
       case SATURDAY, SUNDAY -> false;
       default -> throw new IllegalStateException("A new day was added in my week: " + day);
+    };
+  }
+
+  private boolean isWeekDay5b(DayOfWeek day) {
+    return switch(day) {
+      case MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY -> true;
+      case SATURDAY, SUNDAY -> false;
     };
   }
 
@@ -112,6 +122,21 @@ public class SwitchExpression15 {
         }
         yield true;
       }
+    };
+  }
+
+  private boolean isWeekDay7(DayOfWeek day) {
+    boolean onEarth = true;
+    return switch(day) {
+      case MONDAY:
+      case TUESDAY:
+      case WEDNESDAY:
+      case THURSDAY:
+      case FRIDAY:
+        yield true;
+      case SATURDAY:
+      case SUNDAY:
+        yield false;
     };
   }
 }

@@ -22,7 +22,7 @@ public class TypeInference07 {
   // Use the mustache
 
   private static int catAge(User user) {
-    return user.getAge() * 7;
+    return user.getAge() / 7;
   }
 
   List<User> users = List.of(

@@ -18,7 +18,7 @@ import static pro.tremblay.alljava.User.user;
 public class TypeInference07 {
 
   private static int catAge(User user) {
-    return user.getAge() * 7;
+    return user.getAge() / 7;
   }
 
   List<User> users = List.of(

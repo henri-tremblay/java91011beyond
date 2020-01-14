@@ -9,6 +9,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
+// https://openjdk.java.net/jeps/368
 public class TextBlock16 {
 
   @Test
@@ -53,6 +54,7 @@ public class TextBlock16 {
 
   @Test
   public void test3() throws ScriptException {
+    @SuppressWarnings("removal")
     String script = """
                     function hello() {
                       print('"Hello, %s"');
