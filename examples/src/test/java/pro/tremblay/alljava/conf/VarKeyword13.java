@@ -20,5 +20,5 @@ public class VarKeyword13 {
 
 // Use var
 // var is not a keyword
-// Doesn't compile because of the diamond
+// Doesn't compile because of the diamond, type is inferred down
 // Type of the concrete class, not the interface

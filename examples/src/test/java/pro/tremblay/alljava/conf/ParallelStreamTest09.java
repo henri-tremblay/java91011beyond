@@ -5,30 +5,28 @@ package pro.tremblay.alljava.conf;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class StreamTest09 {
+public class ParallelStreamTest09 {
 
   List<String> people = List.of("Henri", "Matthieu", "Anthony", "Chris");
 
   @Test
   public void people() {
-    List<String> result = new ArrayList<>();
-
-    people.forEach(name -> {
-      if(name.contains("i")) {
-        result.add(name);
-      }
-    });
+    List<String> result = people.stream()
+      .filter(name -> name.contains("i"))
+      .collect(Collectors.toList());
 
     assertThat(result).hasSize(3);
   }
+
 }
 
-// Not a stream
-// Convert to stream and pipeline
-// Extract method
-// Return stream
+// parallelStream and parallel
+// commonPool
+// peek thread name
+// peel ThreadLocal

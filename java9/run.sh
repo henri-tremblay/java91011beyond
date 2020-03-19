@@ -4,7 +4,9 @@
 #
 
 
-java --module-path app/target:lib/target -m java9.app/app.App
+java -cp app/target/classes:lib/target/classes app.App
+
+#java --module-path app/target:lib/target -m java9.app/app.App
 
 #java --module-path app/target:lib/target -m pro.tremblay.java9.app/app.App
 

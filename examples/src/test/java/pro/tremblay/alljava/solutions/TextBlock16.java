@@ -66,4 +66,27 @@ public class TextBlock16 {
     ScriptEngine engine = new ScriptEngineManager().getEngineByName("js");
     engine.eval(script);
   }
+
+  @Test
+  public void escaping() {
+
+    // Escape character
+    var tab = """
+        a\tb""";
+    System.out.println(tab);
+
+    // Trailing whitespaces
+    var trailing = """
+        a   \s
+        """;
+    System.out.println("trailing");
+
+    // Multiline
+    var multiline = """
+        this \
+        is \
+        a super long line""";
+    System.out.println(multiline);
+
+  }
 }

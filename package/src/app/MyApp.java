@@ -11,5 +11,6 @@ public class MyApp {
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setSize(640, 480);
     frame.setVisible(true);
+
   }
 }

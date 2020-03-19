@@ -1,10 +1,4 @@
-#!/Library/Java/JavaVirtualMachines/jdk-12.jdk/Contents/Home/bin/java --source 11
-#
-# Copyright 2018-2020 Henri Tremblay.
-#
-
-
-package pro.tremblay.java8.conf;
+#!/Users/htrembla/.sdkman/candidates/java/11.0.6.hs-adpt/bin/java --source 11
 
 public class Java11 {
 

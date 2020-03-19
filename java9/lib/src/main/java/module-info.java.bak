@@ -1,4 +1,7 @@
+import lib.Hello;
+
 module pro.tremblay.java9.lib {
   exports lib;
 //  opens lib;
+//  provides Hello with Hello;
 }

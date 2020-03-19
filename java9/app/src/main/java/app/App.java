@@ -7,6 +7,7 @@ import lib.Hello;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
+import java.util.ServiceLoader;
 
 public class App {
   public static void main(String... args) throws Throwable {
@@ -14,7 +15,11 @@ public class App {
       .findStaticSetter(Hello.class, "name", String.class);
     mh.invokeExact("Henri");
 
-    Hello.helloWorld();
+    Hello hello = new Hello();
+    hello.helloWorld();
+
+//    ServiceLoader<Hello> serviceLoader = ServiceLoader.load(Hello.class);
+//    serviceLoader.findFirst().ifPresent(Hello::helloWorld);
   }
 }
 

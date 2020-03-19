@@ -17,16 +17,16 @@
 
   <build>
     <plugins>
-      <!--<plugin>-->
-        <!--<artifactId>maven-jar-plugin</artifactId>-->
-        <!--<configuration>-->
-          <!--<archive>-->
-            <!--<manifestEntries>-->
-              <!--<Automatic-Module-Name>pro.tremblay.java9.lib</Automatic-Module-Name>-->
-            <!--</manifestEntries>-->
-          <!--</archive>-->
-        <!--</configuration>-->
-      <!--</plugin>-->
+<!--      <plugin>-->
+<!--        <artifactId>maven-jar-plugin</artifactId>-->
+<!--        <configuration>-->
+<!--          <archive>-->
+<!--            <manifestEntries>-->
+<!--              <Automatic-Module-Name>pro.tremblay.java9.lib</Automatic-Module-Name>-->
+<!--            </manifestEntries>-->
+<!--          </archive>-->
+<!--        </configuration>-->
+<!--      </plugin>-->
 
       <plugin>
         <groupId>com.mycila</groupId>

@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UncheckedIOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,7 @@ public class ReadFileTest03 {
       in = new BufferedReader(new InputStreamReader(new FileInputStream(file), Charset.forName("UTF-8")));
     }
     catch(FileNotFoundException e) {
-      throw new RuntimeException(e);
+      throw new UncheckedIOException(e);
     }
     try {
       List<String> list = new ArrayList<>();
@@ -43,7 +44,7 @@ public class ReadFileTest03 {
       return list;
     }
     catch(IOException e) {
-      throw new RuntimeException(e);
+      throw new UncheckedIOException(e);
     }
     finally {
       try {

@@ -7,9 +7,11 @@ import org.junit.Test;
 
 public class HelloTest {
 
+  private final Hello hello = new Hello();
+
   @Test
   public void testApp() {
-    Hello.helloWorld();
+    hello.helloWorld();
   }
 
 }
