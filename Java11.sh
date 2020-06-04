@@ -1,4 +1,4 @@
-#!/Users/htrembla/.sdkman/candidates/java/11.0.6.hs-adpt/bin/java --source 11
+#!/Users/htrembla/.sdkman/candidates/java/11.0.7.hs-adpt/bin/java --source 11
 
 public class Java11 {
 
