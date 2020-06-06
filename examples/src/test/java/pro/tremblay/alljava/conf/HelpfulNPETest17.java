@@ -1,3 +1,6 @@
+/*
+ * Copyright 2018-2020 Henri Tremblay.
+ */
 package pro.tremblay.alljava.conf;
 
 import org.junit.Test;
