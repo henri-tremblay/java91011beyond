@@ -3,6 +3,7 @@
  */
 package pro.tremblay.alljava.conf;
 
+import org.graalvm.polyglot.Context;
 import org.junit.Test;
 
 import javax.script.ScriptEngine;
@@ -14,13 +15,17 @@ public class TextBlock16 {
   @Test
   public void test() throws ScriptException {
     String script = "function hello() {\n" +
-      "    print('\"Hello, world\"');\n" +
+      "    print(\"Hello, world\");\n" +
       "}\n" +
       "\n" +
       "hello();\n";
 
-    ScriptEngine engine = new ScriptEngineManager().getEngineByName("js");
-    engine.eval(script);
+    try (Context context = Context.create("js")) {
+      context.eval("js", script);
+    }
+
+//    ScriptEngine engine = new ScriptEngineManager().getEngineByName("js");
+//    engine.eval(script);
 
     System.out.println(script);
   }
@@ -50,5 +55,6 @@ public class TextBlock16 {
 
 }
 
-// - Text block
-// - Show bytecode
+// Text block
+// Show bytecode
+// -XX:+UnlockExperimentalVMOptions -XX:-UseJVMCICompiler
