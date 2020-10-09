@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class HelloTest {
 
-  private final Hello hello = new Hello();
+  private final Hello hello = new HelloStdout();
 
   @Test
   public void testApp() {
