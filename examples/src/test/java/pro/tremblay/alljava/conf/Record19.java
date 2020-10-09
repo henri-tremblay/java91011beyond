@@ -101,3 +101,4 @@ public class Record19 {
 // No fields can be added (apart from static ones)
 // Replace anonymous with record
 // Type with the record
+// Show bytecode
