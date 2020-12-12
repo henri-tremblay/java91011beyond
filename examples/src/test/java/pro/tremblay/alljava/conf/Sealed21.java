@@ -7,11 +7,11 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-sealed abstract class Shape permits Circle, Polygon {
+abstract class Shape {
   public abstract double area();
 }
 
-final class Circle extends Shape {
+class Circle extends Shape {
 
   private final double radius;
 
@@ -25,10 +25,10 @@ final class Circle extends Shape {
   }
 }
 
-non-sealed abstract class Polygon extends Shape {
+abstract class Polygon extends Shape {
 }
 
-final class Square extends Polygon {
+class Square extends Polygon {
 
   private final double side;
 

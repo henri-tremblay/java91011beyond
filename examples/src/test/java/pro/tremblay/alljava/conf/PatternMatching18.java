@@ -20,3 +20,7 @@ public class PatternMatching18 {
   }
 
 }
+
+// pattern matching
+// implicitly final
+// always true
