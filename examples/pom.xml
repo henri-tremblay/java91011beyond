@@ -36,7 +36,10 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <compilerArgs>--enable-preview</compilerArgs>
+          <compilerArgs>
+            <arg>--enable-preview</arg>
+            <arg>--add-modules=jdk.incubator.vector</arg>
+          </compilerArgs>
         </configuration>
       </plugin>
       <plugin>

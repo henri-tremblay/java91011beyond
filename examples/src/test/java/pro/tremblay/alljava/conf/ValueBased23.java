@@ -1,3 +1,5 @@
+package pro.tremblay.alljava.conf;
+
 public class ValueBased23 {
 
   public static void main(String[] args) {
@@ -11,8 +13,20 @@ public class ValueBased23 {
     }
 
     Integer i = new Integer(1);
+    Integer j = new Integer(1);
+
+    System.out.println(i == j);
+
+    i = Integer.valueOf(1);
+    j = Integer.valueOf(1);
+
+    System.out.println(i == j);
+
+    i = 1;
+    j = 1;
+
+    System.out.println(i == j);
   }
 }
 
-
-//  @jdk.internal.ValueBased
+// Find usage for  @jdk.internal.ValueBased
