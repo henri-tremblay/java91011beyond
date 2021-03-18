@@ -23,5 +23,5 @@ public class UnderTheHood05 {
 // Run it
 // Move to lambda
 // Run it
-// Use -XX:+TraceClassLoading
+// Use -verbose:class / -XX:+TraceClassLoading
 // Run it
