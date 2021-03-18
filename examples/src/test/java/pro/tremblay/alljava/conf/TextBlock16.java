@@ -56,5 +56,6 @@ public class TextBlock16 {
 }
 
 // Text block
+// .replace
 // Show bytecode
 // -XX:+UnlockExperimentalVMOptions -XX:-UseJVMCICompiler

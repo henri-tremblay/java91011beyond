@@ -126,7 +126,6 @@ public class SwitchExpression15 {
   }
 
   private boolean isWeekDay7(DayOfWeek day) {
-    boolean onEarth = true;
     return switch(day) {
       case MONDAY:
       case TUESDAY:
