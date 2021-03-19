@@ -19,6 +19,7 @@ public class App {
     MethodHandle mh = lookup.findStaticSetter(HelloStdout.class, "name", String.class);
     mh.invokeExact("Henri");
 
+//    Java 16
 //    String s = "Test";
 //    Field field = String.class.getDeclaredField("value");
 //    field.setAccessible(true);
@@ -33,5 +34,3 @@ public class App {
 //    serviceLoader.findFirst().ifPresent(Hello::helloWorld);
   }
 }
-
-// --add-opens pro.tremblay.java9.lib/lib=pro.tremblay.java9.app
