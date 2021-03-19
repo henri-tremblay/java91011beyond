@@ -1,4 +1,8 @@
 #!/usr/bin/env java --source 11
+#
+# Copyright 2018-2021 Henri Tremblay.
+#
+
 
 //
 // Copyright 2018-2020 Henri Tremblay.

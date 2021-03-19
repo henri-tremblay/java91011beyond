@@ -1,3 +1,6 @@
+/*
+ * Copyright 2018-2021 Henri Tremblay.
+ */
 package pro.tremblay.alljava.examples;
 
 import java.net.URI;

@@ -1,3 +1,6 @@
+/*
+ * Copyright 2018-2021 Henri Tremblay.
+ */
 package pro.tremblay.alljava.conf;
 
 public class ValueBased23 {
