@@ -19,14 +19,6 @@ public class App {
     MethodHandle mh = lookup.findStaticSetter(HelloStdout.class, "name", String.class);
     mh.invokeExact("Henri");
 
-//    Java 16
-//    String s = "Test";
-//    Field field = String.class.getDeclaredField("value");
-//    field.setAccessible(true);
-//    byte[] value = (byte[]) field.get(s);
-//    value[0] = 'B';
-//    System.out.println(s);
-
     Hello hello = new HelloStdout();
     hello.helloWorld();
 
