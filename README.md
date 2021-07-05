@@ -8,3 +8,7 @@ All examples are meant to be executed using Java 16.
 ## Update copyrights
 
 `mvn validate license:format`
+
+## Upgrade versions and plugins
+
+`mvn versions:display-dependency-updates versions:display-plugin-updates`
