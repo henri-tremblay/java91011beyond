@@ -3,10 +3,11 @@
  */
 package pro.tremblay.alljava;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Event {
+public class Event implements Serializable {
 
   private Set<User> users = new HashSet<>();
 

@@ -3,7 +3,9 @@
  */
 package pro.tremblay.alljava;
 
-public class User implements Comparable<User> {
+import java.io.Serializable;
+
+public class User implements Comparable<User>, Serializable {
 
   private final String name;
   private final int age;

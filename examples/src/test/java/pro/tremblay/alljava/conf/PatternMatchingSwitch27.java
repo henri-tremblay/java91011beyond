@@ -10,7 +10,7 @@ public class PatternMatchingSwitch27 {
     System.out.println(formatter(1L));
     System.out.println(formatter(1.0));
     System.out.println(formatter("Henri"));
-    System.out.println(formatter3(""));
+    System.out.println(formatter(""));
     System.out.println(formatter(null));
   }
 
