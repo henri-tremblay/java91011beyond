@@ -1,13 +1,8 @@
 #!/usr/bin/env java --source 11
-#
-# Copyright 2018-2022 Henri Tremblay.
-#
-
 
 //
-// Copyright 2018-2021 Henri Tremblay.
+// Copyright 2018-2022 Henri Tremblay.
 //
-
 
 public class Java11 {
 
