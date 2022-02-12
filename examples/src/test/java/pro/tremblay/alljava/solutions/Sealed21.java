@@ -30,6 +30,22 @@ record Square(double side) implements Polygon {
   }
 }
 
+class Rectangle implements Polygon {
+
+  private final double width;
+  private final double height;
+
+  public Rectangle(double width, double height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  @Override
+  public double area() {
+    return width * height;
+  }
+}
+
 public class Sealed21 {
 
   @Test
