@@ -70,3 +70,5 @@ public class Sealed21 {
 // Show sealed, final, permits, non-sealed
 // interface Shape
 // record
+
+// area as a switch
