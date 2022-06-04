@@ -27,6 +27,8 @@ public class PatternMatchingSwitch27 {
       formatted = String.format("double %f", d);
     } else if (o instanceof String s) {
       formatted = String.format("String %s", s);
+    } else if (o == null) {
+      formatted = "null";
     }
     return formatted;
   }
