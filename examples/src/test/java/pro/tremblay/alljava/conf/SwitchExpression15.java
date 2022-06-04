@@ -39,3 +39,6 @@ public class SwitchExpression15 {
   }
 
 }
+
+// PreviewFeature annotations
+// com.sun.tools.javac.code.Source
