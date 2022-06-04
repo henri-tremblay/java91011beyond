@@ -65,4 +65,13 @@ public class PatternMatchingSwitch27 {
       default        -> o.toString();
     };
   }
+
+  static void print(String s) {
+    switch (s) {
+      case null:
+        System.out.println("null");
+      default:
+        System.out.println(s);
+    }
+  }
 }
