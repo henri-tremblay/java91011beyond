@@ -1,9 +1,9 @@
 /*
- * Copyright 2018-2020 Henri Tremblay.
+ * Copyright 2018-2022 Henri Tremblay.
  */
 import lib.Hello;
 
 module pro.tremblay.java9.app {
   requires pro.tremblay.java9.lib;
-  uses Hello;
+//  uses Hello;
 }
