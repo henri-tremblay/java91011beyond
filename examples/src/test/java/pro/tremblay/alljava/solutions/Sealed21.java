@@ -8,26 +8,22 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 sealed interface Shape permits Circle, Polygon {
-  double area();
-}
-
-record Circle(double radius) implements Shape {
-
-  @Override
-  public double area() {
-    return Math.PI * radius * radius;
+  default double area() {
+    return switch (this) {
+      case Circle c -> Math.PI * c.radius() * c.radius();
+      case Square s -> s.side() * s.side();
+      case Rectangle r -> r.width() * r.height();
+      case Polygon ignored -> throw new UnsupportedOperationException("Polygons should override area()");
+    };
   }
 }
+
+record Circle(double radius) implements Shape {}
 
 non-sealed interface Polygon extends Shape {
 }
 
 record Square(double side) implements Polygon {
-
-  @Override
-  public double area() {
-    return side * side;
-  }
 }
 
 class Rectangle implements Polygon {
@@ -38,6 +34,14 @@ class Rectangle implements Polygon {
   public Rectangle(double width, double height) {
     this.width = width;
     this.height = height;
+  }
+
+  public double width() {
+    return width;
+  }
+
+  public double height() {
+    return height;
   }
 
   @Override
