@@ -1,5 +1,5 @@
 /*
- * Copyright 2018-2022 Henri Tremblay.
+ * Copyright 2018-2023 Henri Tremblay.
  */
 import java.io.IOException;
 import java.io.ObjectOutputStream;
