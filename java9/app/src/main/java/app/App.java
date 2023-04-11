@@ -15,6 +15,7 @@ public class App {
   public static void main(String... args) throws Throwable {
     System.out.println("Module: " + App.class.getModule().getName());
     System.out.println("Module: " + Hello.class.getModule().getName());
+    System.out.println("Module: " + String.class.getModule().getName());
 
     MethodHandles.Lookup lookup = MethodHandles.privateLookupIn(HelloStdout.class, MethodHandles.lookup());
     MethodHandle mh = lookup.findStaticSetter(HelloStdout.class, "name", String.class);

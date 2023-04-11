@@ -59,9 +59,10 @@ public class PatternMatchingSwitch27 {
       case Integer i -> String.format("int %d", i);
       case Long l    -> String.format("long %d", l);
       case Double d  -> String.format("double %f", d);
-      case String s
-        when s.isEmpty() -> "empty";
+      case String s when s.isEmpty() -> "empty";
+      case String s when s.length() == 8 -> "empty";
       case String s -> String.format("String %s", s);
+      case CharSequence c -> c.toString();
       case null      -> "null";
       default        -> o.toString();
     };
