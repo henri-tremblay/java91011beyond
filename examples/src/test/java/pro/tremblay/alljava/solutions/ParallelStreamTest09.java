@@ -3,19 +3,19 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class ParallelStreamTest09 {
+class ParallelStreamTest09 {
 
   List<String> people = List.of("Henri", "Matthieu", "Anthony", "Chris");
 
   @Test
-  public void people() {
+  void people() {
     ThreadLocal<String> threadLocal = new ThreadLocal<>();
     threadLocal.set("super important value");
 

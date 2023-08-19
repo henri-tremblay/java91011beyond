@@ -3,19 +3,17 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import pro.tremblay.alljava.User;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import static pro.tremblay.alljava.User.user;
 
 /**
  * @author Henri Tremblay
  */
-public class TypeInference07 {
+class TypeInference07 {
 
   // Just calculate and print directly...
   // Try with an array
@@ -33,7 +31,7 @@ public class TypeInference07 {
   );
 
   @Test
-  public void test1() {
+  void test1() {
 
     // print cat age per person
     users.stream()
@@ -45,7 +43,7 @@ public class TypeInference07 {
   }
 
   @Test
-  public void test2() {
+  void test2() {
 
     // print cat age per person
     users.stream()
@@ -58,7 +56,7 @@ public class TypeInference07 {
   }
 
   @Test
-  public void test3() {
+  void test3() {
 
     // print cat age per person
     users.stream()

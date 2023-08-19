@@ -3,7 +3,7 @@
  */
 package pro.tremblay.alljava.conf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
@@ -21,7 +21,7 @@ public class MethodHandles04 {
   }
 
   @Test
-  public void test() throws Throwable {
+  void test() throws Throwable {
     Field field = MethodHandles04.class.getDeclaredField("title");
     field.setAccessible(true);
     field.set(this, "Sir");
@@ -31,7 +31,7 @@ public class MethodHandles04 {
   }
 
   @Test
-  public void testPrivate() throws Throwable {
+  void testPrivate() throws Throwable {
     List<String> list = new ArrayList<>();
 
     MethodHandle getter = MethodHandles.lookup().findGetter(ArrayList.class, "size", int.class);

@@ -3,7 +3,7 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
@@ -28,7 +28,7 @@ public class MethodHandles04 {
   }
 
   @Test
-  public void test() throws Throwable {
+  void test() throws Throwable {
     Field field = MethodHandles04.class.getDeclaredField("title");
     MethodHandle setter = MethodHandles.lookup().unreflectSetter(field);
     setter.invokeExact(this, "Sir");
@@ -39,7 +39,7 @@ public class MethodHandles04 {
   }
 
   @Test
-  public void test1() throws Throwable {
+  void test1() throws Throwable {
     MethodHandle setter = MethodHandles.lookup().findSetter(getClass(), "title", String.class);
     setter.invokeExact(this, "Sir");
 
@@ -49,13 +49,13 @@ public class MethodHandles04 {
   }
 
   @Test
-  public void test2() throws Throwable {
+  void test2() throws Throwable {
     MethodHandle setter = MethodHandles.lookup().findSetter(ArrayList.class, "size", int.class);
     setter.invokeExact(this);
   }
 
   @Test
-  public void test3() throws Throwable {
+  void test3() throws Throwable {
     List<String> list = new ArrayList<>();
 
     Field field = ArrayList.class.getDeclaredField("size");
@@ -65,7 +65,7 @@ public class MethodHandles04 {
   }
 
   @Test
-  public void test4() throws Throwable {
+  void test4() throws Throwable {
     List<String> list = new ArrayList<>();
 
     MethodHandle getter = MethodHandles.privateLookupIn(ArrayList.class, MethodHandles.lookup()).findGetter(ArrayList.class, "size", int.class);

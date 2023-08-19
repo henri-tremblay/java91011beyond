@@ -3,7 +3,7 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -13,10 +13,10 @@ import java.util.concurrent.ConcurrentHashMap;
  * - Doesn't compile because of the diamond
  * - Type of the concrete class, not the interface
  */
-public class VarKeyword13 {
+class VarKeyword13 {
 
   @Test
-  public void test() {
+  void test() {
     var map = new ConcurrentHashMap<String, String>();
     map.put("key", "value");
     String key = map.get("key");

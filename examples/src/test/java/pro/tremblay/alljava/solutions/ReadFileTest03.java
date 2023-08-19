@@ -3,7 +3,7 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,12 +22,11 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.easymock.EasyMock.*;
-import static org.junit.Assert.assertThrows;
 
 /**
  * @author Henri Tremblay
  */
-public class ReadFileTest03 {
+class ReadFileTest03 {
 
   // Old version
   // Use Paths and StandardCharsets
@@ -174,7 +173,7 @@ public class ReadFileTest03 {
   }
 
   @Test
-  public void test() {
+  void test() {
     List<String> actual = readFile("src/test/data", "lines.txt");
     assertThat(actual).contains("alpha", "bravo", "charlie");
   }
@@ -182,7 +181,7 @@ public class ReadFileTest03 {
   private IOException closing = new IOException("Closing");
 
   @Test
-  public void testSuppressed() throws IOException {
+  void testSuppressed() throws IOException {
     // assertThrows(IOException.class, () -> in.read());
 
     assertThatThrownBy(this::readStuff)

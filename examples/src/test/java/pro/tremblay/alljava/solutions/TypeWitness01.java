@@ -4,21 +4,20 @@
 package pro.tremblay.alljava.solutions;
 
 import org.easymock.EasyMock;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.Assert.*;
-
-public class TypeWitness01 {
+class TypeWitness01 {
 
   // Not compiling
   // Show with cast to list
   // Show with type witness
 
   @Test
-  public void test() {
+  void test() {
     foo(EasyMock.<List<String>>anyObject());
   }
 
@@ -27,6 +26,6 @@ public class TypeWitness01 {
   }
 
   private void foo(Set<String> set) {
-    fail("Wrong method called");
+    Assertions.fail("Wrong method called");
   }
 }

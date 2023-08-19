@@ -3,16 +3,16 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class PatternMatching18 {
+class PatternMatching18 {
 
   private Object foo() {
     return "aaa";
   }
 
   @Test
-  public void test() {
+  void test() {
     Object obj = foo();
     if (obj instanceof String s) {
       System.out.println(s.length());

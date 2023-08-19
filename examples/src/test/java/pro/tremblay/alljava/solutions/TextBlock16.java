@@ -3,17 +3,17 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 // https://openjdk.java.net/jeps/368
-public class TextBlock16 {
+class TextBlock16 {
 
   @Test
-  public void test() throws ScriptException {
+  void test() throws ScriptException {
     String script = "function hello() {\n" +
       "    print('\"Hello, world\"');\n" +
       "}\n" +
@@ -25,7 +25,7 @@ public class TextBlock16 {
   }
 
   @Test
-  public void test1() throws ScriptException {
+  void test1() throws ScriptException {
     String script = """
                     function hello() {
                       print('"Hello, world\"');
@@ -39,7 +39,7 @@ public class TextBlock16 {
   }
 
   @Test
-  public void test2() throws ScriptException {
+  void test2() throws ScriptException {
     String script = """
                     function hello() {
                       print('"Hello, $name"');
@@ -53,7 +53,7 @@ public class TextBlock16 {
   }
 
   @Test
-  public void test3() throws ScriptException {
+  void test3() throws ScriptException {
     @SuppressWarnings("removal")
     String script = """
                     function hello() {
@@ -68,7 +68,7 @@ public class TextBlock16 {
   }
 
   @Test
-  public void escaping() {
+  void escaping() {
 
     // Escape character
     var tab = """

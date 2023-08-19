@@ -3,12 +3,12 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class Hidden20 {
+class Hidden20 {
 
   @Test
-  public void test() throws ClassNotFoundException {
+  void test() throws ClassNotFoundException {
 
     Runnable r = () -> {
       throw new RuntimeException("Error!");

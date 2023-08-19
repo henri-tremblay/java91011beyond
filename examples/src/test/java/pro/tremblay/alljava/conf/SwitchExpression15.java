@@ -3,16 +3,16 @@
  */
 package pro.tremblay.alljava.conf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.DayOfWeek;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SwitchExpression15 {
+class SwitchExpression15 {
 
   @Test
-  public void mySwitch() {
+  void mySwitch() {
     assertThat(isWeekDay(DayOfWeek.MONDAY)).isTrue();
     assertThat(isWeekDay(DayOfWeek.SUNDAY)).isFalse();
   }

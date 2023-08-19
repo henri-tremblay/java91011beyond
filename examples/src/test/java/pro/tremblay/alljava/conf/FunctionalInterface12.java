@@ -3,14 +3,14 @@
  */
 package pro.tremblay.alljava.conf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.function.Consumer;
 
-public class FunctionalInterface12 {
+class FunctionalInterface12 {
 
   @Test
-  public void test() {
+  void test() {
     Runnable r = () -> System.out.printf("Hello Henri");
     r.run();
   }
@@ -20,7 +20,7 @@ public class FunctionalInterface12 {
   }
 
   @Test
-  public void testEverything() {
+  void testEverything() {
     Consumer<String> consumer = s -> System.out.printf(s);
     consumer.accept("Hi");
   }

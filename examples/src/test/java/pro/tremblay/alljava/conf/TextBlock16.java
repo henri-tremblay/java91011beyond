@@ -4,16 +4,14 @@
 package pro.tremblay.alljava.conf;
 
 import org.graalvm.polyglot.Context;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
-public class TextBlock16 {
+class TextBlock16 {
 
   @Test
-  public void test() throws ScriptException {
+  void test() throws ScriptException {
     String script = "function hello() {\n" +
       "    print(\"Hello, world\");\n" +
       "}\n" +
@@ -31,7 +29,7 @@ public class TextBlock16 {
   }
 
   @Test
-  public void escaping() {
+  void escaping() {
 
     // Escape character
     var tab = """

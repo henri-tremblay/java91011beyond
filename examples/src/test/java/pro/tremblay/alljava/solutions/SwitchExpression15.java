@@ -3,13 +3,10 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.DayOfWeek;
 
-import static java.time.DayOfWeek.THURSDAY;
-import static java.time.DayOfWeek.TUESDAY;
-import static java.time.DayOfWeek.WEDNESDAY;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -23,10 +20,10 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @author Henri Tremblay
  */
 // https://openjdk.java.net/jeps/361
-public class SwitchExpression15 {
+class SwitchExpression15 {
 
   @Test
-  public void mySwitch() {
+  void mySwitch() {
     assertThat(isWeekDay(DayOfWeek.MONDAY)).isTrue();
     assertThat(isWeekDay(DayOfWeek.SUNDAY)).isFalse();
   }

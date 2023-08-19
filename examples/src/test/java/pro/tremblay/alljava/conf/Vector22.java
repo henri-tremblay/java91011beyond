@@ -5,16 +5,16 @@ package pro.tremblay.alljava.conf;
 
 import jdk.incubator.vector.FloatVector;
 import jdk.incubator.vector.VectorSpecies;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-public class Vector22 {
+class Vector22 {
 
   static final VectorSpecies<Float> SPECIES = FloatVector.SPECIES_256;
 
   @Test
-  public void test() {
+  void test() {
     float[] a = {1, 2, 3};
     float[] b = {1, 2, 3};
     float[] c = new float[3];

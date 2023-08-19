@@ -3,15 +3,15 @@
  */
 package pro.tremblay.alljava.conf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-public class VarKeyword13 {
+class VarKeyword13 {
 
   @Test
-  public void test() {
+  void test() {
     ConcurrentMap<String, String> map = new ConcurrentHashMap<>();
     map.put("key", "value");
     String key = map.get("key");

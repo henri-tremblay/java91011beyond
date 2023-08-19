@@ -3,14 +3,14 @@
  */
 package lib;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class HelloTest {
+class HelloTest {
 
   private final Hello hello = new HelloStdout();
 
   @Test
-  public void testApp() {
+  void testApp() {
     hello.helloWorld();
   }
 

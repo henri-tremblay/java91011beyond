@@ -3,12 +3,12 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class PatternMatchingSwitch27 {
+class PatternMatchingSwitch27 {
 
   @Test
-  public void test() {
+  void test() {
     System.out.println(formatter(1));
     System.out.println(formatter(1L));
     System.out.println(formatter(1.0));

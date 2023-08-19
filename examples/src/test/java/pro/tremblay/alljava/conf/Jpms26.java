@@ -3,14 +3,14 @@
  */
 package pro.tremblay.alljava.conf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Field;
 
-public class Jpms26 {
+class Jpms26 {
 
   @Test
-  public void test() throws Exception {
+  void test() throws Exception {
     String s = "Test";
     Field field = String.class.getDeclaredField("value");
     field.setAccessible(true);

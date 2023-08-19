@@ -3,7 +3,7 @@
  */
 package pro.tremblay.alljava.conf;
 
-public class ValueBased25 {
+class ValueBased25 {
 
   public static void main(String[] args) {
     Double d = 20.0;

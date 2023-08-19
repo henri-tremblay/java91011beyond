@@ -3,7 +3,7 @@
  */
 package pro.tremblay.alljava.conf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -12,10 +12,10 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.CompletableFuture;
 
-public class HttpClient24 {
+class HttpClient24 {
 
   @Test
-  public void callMyWebsite() throws Exception {
+  void callMyWebsite() throws Exception {
     HttpClient client = HttpClient.newHttpClient();
 
     HttpRequest get = HttpRequest.newBuilder(URI.create("https://blog.tremblay.pro"))

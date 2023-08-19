@@ -3,7 +3,7 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -50,10 +50,10 @@ class Rectangle implements Polygon {
   }
 }
 
-public class Sealed21 {
+class Sealed21 {
 
   @Test
-  public void test() {
+  void test() {
     Shape s = new Circle(2);
     assertThat(s.area()).isEqualTo(2 * 2 * Math.PI);
   }

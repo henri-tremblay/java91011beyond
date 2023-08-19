@@ -3,11 +3,9 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import java.util.function.Consumer;
-
-public class FunctionalInterface12 {
+class FunctionalInterface12 {
 
   // Talk about runnable
   // Add a method to MyInterface
@@ -18,7 +16,7 @@ public class FunctionalInterface12 {
   // Replace Consumer by MyInterface
 
   @Test
-  public void test() {
+  void test() {
     Runnable r = () -> System.out.printf("Hello Henri");
     r.run();
   }
@@ -33,7 +31,7 @@ public class FunctionalInterface12 {
   }
 
   @Test
-  public void testEverything() {
+  void testEverything() {
     MyInterface consumer = s -> System.out.printf(s);
     consumer.accept("Hi");
   }

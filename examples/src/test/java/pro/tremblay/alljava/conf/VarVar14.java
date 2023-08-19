@@ -3,8 +3,8 @@
  */
 package pro.tremblay.alljava.conf;
 
+import org.junit.jupiter.api.Test;
 import pro.tremblay.alljava.User;
-import org.junit.Test;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -18,7 +18,7 @@ import static pro.tremblay.alljava.User.user;
 /**
  * @author Henri Tremblay
  */
-public class VarVar14 {
+class VarVar14 {
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target({ ElementType.PARAMETER})
@@ -33,7 +33,7 @@ public class VarVar14 {
   );
 
   @Test
-  public void test() {
+  void test() {
 
     persons.entrySet().stream()
       .map(entry -> new Object() {

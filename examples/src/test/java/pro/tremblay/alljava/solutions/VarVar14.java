@@ -3,7 +3,7 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import pro.tremblay.alljava.User;
 
 import java.lang.annotation.ElementType;
@@ -23,7 +23,7 @@ import static pro.tremblay.alljava.User.user;
  * - Show that now we can
  * - Type the lambda, annotate
  */
-public class VarVar14 {
+class VarVar14 {
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target({ ElementType.PARAMETER})
@@ -38,7 +38,7 @@ public class VarVar14 {
   );
 
   @Test
-  public void test1() {
+  void test1() {
     persons.entrySet().stream()
       .map(entry -> new Object() {
         long id =  entry.getKey();
@@ -48,7 +48,7 @@ public class VarVar14 {
   }
 
   @Test
-  public void test2() {
+  void test2() {
     List<Object> result = persons.entrySet().stream()
       .map(entry -> new Object() {
         long id =  entry.getKey();
@@ -58,7 +58,7 @@ public class VarVar14 {
   }
 
   @Test
-  public void test3() {
+  void test3() {
     var result = persons.entrySet().stream()
       .map(entry -> new Object() {
         long id =  entry.getKey();
@@ -70,7 +70,7 @@ public class VarVar14 {
   }
 
   @Test
-  public void test4() {
+  void test4() {
     var result = persons.entrySet().stream()
       .map((@NotNull  Map.Entry<Long, User> entry) -> new Object() {
         long id =  entry.getKey();

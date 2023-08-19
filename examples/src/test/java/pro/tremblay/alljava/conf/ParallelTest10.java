@@ -5,7 +5,7 @@ package pro.tremblay.alljava.conf;
 
 import pro.tremblay.alljava.User;
 import pro.tremblay.alljava.UserDao;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.concurrent.*;
@@ -14,12 +14,12 @@ import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.*;
 
-public class ParallelTest10 {
+class ParallelTest10 {
 
   private final UserDao userDao = new UserDao();
 
   @Test
-  public void averageSequential() {
+  void averageSequential() {
     double averageAge = UserDao.NAMES
       .stream()
       .map(userDao::find)
@@ -31,7 +31,7 @@ public class ParallelTest10 {
   }
 
   @Test
-  public void averageParallelThread() {
+  void averageParallelThread() {
     AtomicLong value = new AtomicLong(0); // cheating
     CountDownLatch latch = new CountDownLatch(UserDao.NAMES.size()); // cheating
     for (String firstName : UserDao.NAMES) {
@@ -53,7 +53,7 @@ public class ParallelTest10 {
   }
 
   @Test
-  public void averageParallelExecutor() throws Exception {
+  void averageParallelExecutor() throws Exception {
     ExecutorService service = Executors.newFixedThreadPool(UserDao.NAMES.size());
 
     List<Callable<Integer>> callables = UserDao.NAMES.stream()
@@ -115,7 +115,7 @@ public class ParallelTest10 {
   }
 
   @Test
-  public void averageParallelForkJoin() {
+  void averageParallelForkJoin() {
     long total;
     ForkJoinPool pool = new ForkJoinPool(UserDao.NAMES.size());
     try {
@@ -129,7 +129,7 @@ public class ParallelTest10 {
   }
 
   @Test
-  public void averageParallelStream() {
+  void averageParallelStream() {
     double averageAge = UserDao.NAMES
       .parallelStream()
       .map(userDao::find)
@@ -141,7 +141,7 @@ public class ParallelTest10 {
   }
 
   @Test
-  public void averageCompletableFuture() throws ExecutionException, InterruptedException {
+  void averageCompletableFuture() throws ExecutionException, InterruptedException {
     CompletableFuture<Integer> averageFuture =
       CompletableFuture.completedFuture(0);
 
@@ -156,7 +156,7 @@ public class ParallelTest10 {
     assertThat(averageAge).isEqualTo(33);
   }
 
-  public class FirstNameToUserProcessor extends SubmissionPublisher<User> implements Flow.Processor<String, User> {
+  class FirstNameToUserProcessor extends SubmissionPublisher<User> implements Flow.Processor<String, User> {
 
     private Flow.Subscription subscription;
 
@@ -181,7 +181,7 @@ public class ParallelTest10 {
     }
   }
 
-  public class UserToAgeProcessor extends SubmissionPublisher<Integer> implements Flow.Processor<User, Integer> {
+  class UserToAgeProcessor extends SubmissionPublisher<Integer> implements Flow.Processor<User, Integer> {
 
     private Flow.Subscription subscription;
 
@@ -206,7 +206,7 @@ public class ParallelTest10 {
     }
   }
 
-  public class SumSubscriber implements Flow.Subscriber<Integer> {
+  class SumSubscriber implements Flow.Subscriber<Integer> {
 
     private Flow.Subscription subscription;
     private long total;
@@ -239,7 +239,7 @@ public class ParallelTest10 {
   }
 
   @Test
-  public void averageFlow() {
+  void averageFlow() {
     SubmissionPublisher<String> publisher = new SubmissionPublisher<>();
 
     FirstNameToUserProcessor firstNameToUserProcessor = new FirstNameToUserProcessor();

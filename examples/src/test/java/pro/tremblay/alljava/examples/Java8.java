@@ -3,8 +3,7 @@
  */
 package pro.tremblay.alljava.examples;
 
-import org.junit.Test;
-import pro.tremblay.alljava.conf.MethodReferenceTest08;
+import org.junit.jupiter.api.Test;
 
 import java.util.*;
 import java.util.function.Function;

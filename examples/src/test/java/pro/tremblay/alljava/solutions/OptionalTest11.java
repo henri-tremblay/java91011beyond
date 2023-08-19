@@ -5,12 +5,12 @@ package pro.tremblay.alljava.solutions;
 
 import pro.tremblay.alljava.User;
 import pro.tremblay.alljava.UserDao;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 import java.util.Optional;
 
-public class OptionalTest11 {
+class OptionalTest11 {
 
   // Do a lambda filter findAny
   // Get it, show it fails
@@ -22,7 +22,7 @@ public class OptionalTest11 {
   List<String> list = List.of("Henri", "Matthieu", "Anthony", "Chris");
 
   @Test
-  public void findHenriAndPrintIt() {
+  void findHenriAndPrintIt() {
     int i = list.indexOf("Henri");
     if(i >= 0) {
       String henri = list.get(i);
@@ -31,7 +31,7 @@ public class OptionalTest11 {
   }
 
   @Test
-  public void findHenriLambdaStyle() {
+  void findHenriLambdaStyle() {
     Optional<String> result = list.stream()
       .filter("Henri"::equals)
       .findAny();
@@ -42,7 +42,7 @@ public class OptionalTest11 {
   }
 
   @Test
-  public void findHenriLambdaStyleCute() {
+  void findHenriLambdaStyleCute() {
     list.stream()
       .filter("Henri"::equals)
       .findAny()
@@ -51,7 +51,7 @@ public class OptionalTest11 {
   }
 
   @Test
-  public void orElse() {
+  void orElse() {
     UserDao dao = new UserDao();
     User user = dao.find("Henri");
     if(user == null) {
@@ -63,7 +63,7 @@ public class OptionalTest11 {
   }
 
   @Test
-  public void orElseCute() {
+  void orElseCute() {
     UserDao dao = new UserDao();
     String result = Optional.ofNullable(dao.find("Roger"))
       .map(User::getName)
@@ -72,7 +72,7 @@ public class OptionalTest11 {
   }
 
   @Test
-  public void orElseCute2() {
+  void orElseCute2() {
     UserDao dao = new UserDao();
     Optional.ofNullable(dao.find("Roger"))
       .map(User::getName)

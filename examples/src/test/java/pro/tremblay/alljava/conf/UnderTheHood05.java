@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.function.Consumer;
 
-public class UnderTheHood05 {
+class UnderTheHood05 {
 
   public static void main(String[] args) throws Exception {
     Arrays.asList(UnderTheHood05.class.getDeclaredMethods())

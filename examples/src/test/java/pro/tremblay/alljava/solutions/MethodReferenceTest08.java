@@ -3,7 +3,7 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.function.IntSupplier;
 
@@ -12,10 +12,10 @@ import java.util.function.IntSupplier;
  * - Replace with method reference
  * - Show the NullPointerException
  */
-public class MethodReferenceTest08 {
+class MethodReferenceTest08 {
 
   @Test
-  public void test() {
+  void test() {
     String s = null;
     IntSupplier r = s::length;
   }

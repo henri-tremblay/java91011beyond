@@ -3,19 +3,17 @@
  */
 package pro.tremblay.alljava.conf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import pro.tremblay.alljava.User;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import static pro.tremblay.alljava.User.user;
 
 /**
  * @author Henri Tremblay
  */
-public class TypeInference07 {
+class TypeInference07 {
 
   private static int catAge(User user) {
     return user.getAge() / 7;
@@ -29,7 +27,7 @@ public class TypeInference07 {
   );
 
   @Test
-  public void test() {
+  void test() {
     // print cat age per person
     users.stream()
       .forEach(person -> {

@@ -3,7 +3,7 @@
  */
 package pro.tremblay.alljava.solutions;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import pro.tremblay.alljava.User;
 
 import java.util.List;
@@ -27,10 +27,10 @@ record Point(int x, int y) {
 
 }
 
-public class Record19 {
+class Record19 {
 
   @Test
-  public void test() {
+  void test() {
     var p = new Point(3,4);
 
     System.out.println(p);
@@ -55,7 +55,7 @@ public class Record19 {
   );
 
   @Test
-  public void testTuple() {
+  void testTuple() {
     record PersonAsCat(String name, int catAge) {}
 
     List<PersonAsCat> result = users.stream()

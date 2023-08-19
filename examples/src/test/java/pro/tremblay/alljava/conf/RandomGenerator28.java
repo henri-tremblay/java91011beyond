@@ -3,15 +3,15 @@
  */
 package pro.tremblay.alljava.conf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 import java.util.random.RandomGenerator;
 
-public class RandomGenerator28 {
+class RandomGenerator28 {
 
   @Test
-  public void test() {
+  void test() {
     RandomGenerator generator = new Random();
     System.out.println(generator.getClass());
     System.out.println(generator.nextInt(10));

@@ -3,18 +3,14 @@
  */
 package pro.tremblay.alljava.conf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.function.Function;
 import java.util.function.IntSupplier;
-import java.util.function.Supplier;
 
-public class MethodReferenceTest08 {
+class MethodReferenceTest08 {
 
   @Test
-  public void test() {
+  void test() {
     String s = null;
     IntSupplier r = () -> s.length();
   }

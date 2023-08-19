@@ -3,15 +3,15 @@
  */
 package pro.tremblay.alljava.conf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import pro.tremblay.alljava.User;
 
-public class HelpfulNPETest17 {
+class HelpfulNPETest17 {
 
   private User user = User.user(null, 14);
 
   @Test
-  public void test() {
+  void test() {
       int value = foo();
   }
 

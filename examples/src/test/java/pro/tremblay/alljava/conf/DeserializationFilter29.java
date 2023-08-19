@@ -3,20 +3,19 @@
  */
 package pro.tremblay.alljava.conf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import pro.tremblay.alljava.Event;
 import pro.tremblay.alljava.User;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.ObjectInputFilter;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class DeserializationFilter29 {
+class DeserializationFilter29 {
 
   @Test
-  public void test() throws Exception {
+  void test() throws Exception {
     User user = User.user("Jesus", 33);
     Event event = Event.create("Resurrection");
 

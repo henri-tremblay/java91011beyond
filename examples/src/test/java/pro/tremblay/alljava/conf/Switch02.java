@@ -3,11 +3,11 @@
  */
 package pro.tremblay.alljava.conf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class Switch02 {
+class Switch02 {
 
   String translate(String word) {
     if("hello".equals(word)) {
@@ -48,18 +48,18 @@ public class Switch02 {
   }
 
   @Test
-  public void translateWhatWeKnow() {
+  void translateWhatWeKnow() {
     assertThat(translate("hello")).isEqualTo("bonjour");
     assertThat(translate("world")).isEqualTo("monde");
   }
 
   @Test
-  public void nullOnWhatWeDontKnow() {
+  void nullOnWhatWeDontKnow() {
     assertThat(translate("unknown")).isNull();
   }
 
   @Test
-  public void nullOnNull() {
+  void nullOnNull() {
     assertThat(translate(null)).isNull();
   }
 

@@ -6,7 +6,7 @@ package pro.tremblay.alljava.solutions;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
-public class UnderTheHood05 {
+class UnderTheHood05 {
 
   // Show the target dir
   // Move to lambda
