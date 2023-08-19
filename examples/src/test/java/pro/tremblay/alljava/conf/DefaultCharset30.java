@@ -3,12 +3,12 @@
  */
 package pro.tremblay.alljava.conf;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class DefaultCharset30 {
+class DefaultCharset30 {
 
   @Test
-  public void test() {
+  void test() {
     System.out.println(System.getProperty("file.encoding"));
   }
 
