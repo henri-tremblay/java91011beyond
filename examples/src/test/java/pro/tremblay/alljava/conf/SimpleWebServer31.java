@@ -1,3 +1,6 @@
+/*
+ * Copyright 2018-2023 Henri Tremblay.
+ */
 package pro.tremblay.alljava.conf;
 
 import com.sun.net.httpserver.HttpServer;
