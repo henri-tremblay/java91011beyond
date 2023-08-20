@@ -43,6 +43,12 @@
         </configuration>
       </plugin>
       <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <additionalOptions>--enable-preview --add-modules=jdk.incubator.vector --snippet-path ${project.basedir}/src/test/java</additionalOptions>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>com.mycila</groupId>
         <artifactId>license-maven-plugin</artifactId>
         <configuration>
