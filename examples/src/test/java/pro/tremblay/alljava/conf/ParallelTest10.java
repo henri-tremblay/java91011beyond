@@ -142,8 +142,7 @@ class ParallelTest10 {
 
   @Test
   void averageCompletableFuture() throws ExecutionException, InterruptedException {
-    CompletableFuture<Integer> averageFuture =
-      CompletableFuture.completedFuture(0);
+    CompletableFuture<Integer> averageFuture = CompletableFuture.completedFuture(0);
 
     for (String firstName : UserDao.NAMES) {
       CompletableFuture<Integer> userFuture = CompletableFuture.supplyAsync(() -> userDao.find(firstName))
