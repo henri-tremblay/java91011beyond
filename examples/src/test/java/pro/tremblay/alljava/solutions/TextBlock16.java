@@ -3,29 +3,28 @@
  */
 package pro.tremblay.alljava.solutions;
 
+import org.graalvm.polyglot.Context;
 import org.junit.jupiter.api.Test;
-
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 
 // https://openjdk.java.net/jeps/368
 class TextBlock16 {
 
   @Test
-  void test() throws ScriptException {
+  void test() {
     String script = "function hello() {\n" +
       "    print('\"Hello, world\"');\n" +
       "}\n" +
       "\n" +
       "hello();\n";
 
-    ScriptEngine engine = new ScriptEngineManager().getEngineByName("js");
-    engine.eval(script);
+    try (Context context = Context.create("js")) {
+      context.eval("js", script);
+    }
+    System.out.println(script);
   }
 
   @Test
-  void test1() throws ScriptException {
+  void test1() {
     String script = """
                     function hello() {
                       print('"Hello, world\"');
@@ -33,13 +32,15 @@ class TextBlock16 {
 
                     hello();
                     """;
+
+    try (Context context = Context.create("js")) {
+      context.eval("js", script);
+    }
     System.out.println(script);
-    ScriptEngine engine = new ScriptEngineManager().getEngineByName("js");
-    engine.eval(script);
   }
 
   @Test
-  void test2() throws ScriptException {
+  void test2() {
     String script = """
                     function hello() {
                       print('"Hello, $name"');
@@ -47,14 +48,15 @@ class TextBlock16 {
 
                     hello();
                     """.replace("$name", "Henri");
+
+    try (Context context = Context.create("js")) {
+      context.eval("js", script);
+    }
     System.out.println(script);
-    ScriptEngine engine = new ScriptEngineManager().getEngineByName("js");
-    engine.eval(script);
   }
 
   @Test
-  void test3() throws ScriptException {
-    @SuppressWarnings("removal")
+  void test3() {
     String script = """
                     function hello() {
                       print('"Hello, %s"');
@@ -62,9 +64,11 @@ class TextBlock16 {
 
                     hello();
                     """.formatted("Henri");
+
+    try (Context context = Context.create("js")) {
+      context.eval("js", script);
+    }
     System.out.println(script);
-    ScriptEngine engine = new ScriptEngineManager().getEngineByName("js");
-    engine.eval(script);
   }
 
   @Test

@@ -6,12 +6,10 @@ package pro.tremblay.alljava.conf;
 import org.graalvm.polyglot.Context;
 import org.junit.jupiter.api.Test;
 
-import javax.script.ScriptException;
-
 class TextBlock16 {
 
   @Test
-  void test() throws ScriptException {
+  void test() {
     String script = "function hello() {\n" +
       "    print(\"Hello, world\");\n" +
       "}\n" +
@@ -21,9 +19,6 @@ class TextBlock16 {
     try (Context context = Context.create("js")) {
       context.eval("js", script);
     }
-
-//    ScriptEngine engine = new ScriptEngineManager().getEngineByName("js");
-//    engine.eval(script);
 
     System.out.println(script);
   }
