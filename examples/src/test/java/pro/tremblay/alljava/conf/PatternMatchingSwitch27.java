@@ -36,4 +36,4 @@ class PatternMatchingSwitch27 {
 
 // switch case Integer i ->
 // case null
-// && s.isEmpty()
+// case String s when s.isEmpty() -> "empty";
