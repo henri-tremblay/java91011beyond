@@ -14,7 +14,7 @@ public class CodeSnippets32 {
   Map<String, String> map = new HashMap<>();
 
   /**
-   * This is how a putIfAbsent works on an Map.
+   * This is how a putIfAbsent works on a Map.
    * <pre>{@code
    * String s = map.putIfAbsent("key", "value");
    * if (s != null) {
