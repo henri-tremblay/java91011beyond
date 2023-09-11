@@ -25,19 +25,20 @@ public class SimpleWebServer31 {
       var server = launchServer();
       var addr = server.getAddress();
 
-      HttpClient client = HttpClient.newHttpClient();
+      try (HttpClient client = HttpClient.newHttpClient()) {
 
-      HttpRequest get = HttpRequest.newBuilder(URI.create("http://localhost:" + addr.getPort() + "/lines.txt"))
-        .GET()
-        .build();
+        HttpRequest get = HttpRequest.newBuilder(URI.create("http://localhost:" + addr.getPort() + "/lines.txt"))
+          .GET()
+          .build();
 
-      HttpResponse<String> response = client.send(get, HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8));
+        HttpResponse<String> response = client.send(get, HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8));
 
-      assertThat(response.body()).isEqualTo("""
+        assertThat(response.body()).isEqualTo("""
           alpha
           bravo
           charlie
           """);
+      }
 
       server.stop(0);
     }
@@ -53,15 +54,16 @@ public class SimpleWebServer31 {
         exchange.close();
       });
 
-      HttpClient client = HttpClient.newHttpClient();
+      try (HttpClient client = HttpClient.newHttpClient()) {
 
-      HttpRequest get = HttpRequest.newBuilder(URI.create("http://localhost:" + addr.getPort() + "/hello"))
-        .GET()
-        .build();
+        HttpRequest get = HttpRequest.newBuilder(URI.create("http://localhost:" + addr.getPort() + "/hello"))
+          .GET()
+          .build();
 
-      HttpResponse<String> response = client.send(get, HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8));
+        HttpResponse<String> response = client.send(get, HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8));
 
-      assertThat(response.body()).isEqualTo("world");
+        assertThat(response.body()).isEqualTo("world");
+      }
 
       server.stop(1);
     }
