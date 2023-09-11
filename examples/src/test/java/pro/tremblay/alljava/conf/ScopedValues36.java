@@ -1,7 +1,5 @@
 package pro.tremblay.alljava.conf;
 
-import jdk.incubator.concurrent.ScopedValue;
-import jdk.incubator.concurrent.StructuredTaskScope;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,8 +10,6 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -34,7 +30,7 @@ class ScopedValues36 {
 
   @BeforeEach
   void before() {
-    authentication.set("pasword");
+    authentication.set("password");
   }
 
   @Test
@@ -69,6 +65,7 @@ class ScopedValues36 {
     return client.send(request, HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8)).body();
   }
 
+  // try-with-resource
   // pass a value to the thread local inside the thread
   // use a scoped value
   // use a structured scope

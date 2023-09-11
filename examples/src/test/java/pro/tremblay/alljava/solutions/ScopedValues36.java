@@ -1,7 +1,5 @@
 package pro.tremblay.alljava.solutions;
 
-import jdk.incubator.concurrent.ScopedValue;
-import jdk.incubator.concurrent.StructuredTaskScope;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,6 +15,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.StructuredTaskScope;
 import java.util.concurrent.TimeUnit;
 
 class ScopedValues36 {
@@ -33,7 +32,7 @@ class ScopedValues36 {
 
   @BeforeEach
   void before() {
-    authentication.set("pasword");
+    authentication.set("password");
   }
 
   @Test
@@ -61,7 +60,29 @@ class ScopedValues36 {
   }
 
   @Test
-  void test1() throws Exception {
+  public void test1() throws Exception {
+    try (ExecutorService executorService = Executors.newVirtualThreadPerTaskExecutor()) {
+
+      List<Future<String>> bodies = urls.stream()
+        .map(url -> executorService.submit(() -> {
+          return retrieveBody(url);
+        }))
+        .toList();
+
+      bodies.stream()
+        .map(future -> {
+          try {
+            return future.get();
+          } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException(e);
+          }
+        })
+        .forEach(System.out::println);
+    }
+  }
+
+  @Test
+  void test2() throws Exception {
     ExecutorService executorService = Executors.newVirtualThreadPerTaskExecutor();
 
     String auth = authentication.get();
@@ -94,11 +115,11 @@ class ScopedValues36 {
   private final ScopedValue<String> authScoped = ScopedValue.newInstance();
 
   @Test
-  void test2() throws Exception {
+  void test3() throws Exception {
     ExecutorService executorService = Executors.newVirtualThreadPerTaskExecutor();
 
     List<Future<String>> bodies = urls.stream()
-        .map(url -> executorService.submit(() -> ScopedValue.where(authScoped, "password", () -> retrieveBody(url))))
+        .map(url -> executorService.submit(() -> ScopedValue.callWhere(authScoped, "password", () -> retrieveBody(url))))
         .toList();
 
     bodies.stream()
@@ -116,13 +137,13 @@ class ScopedValues36 {
   }
 
   @Test
-  void test3() throws Exception {
-    ScopedValue.where(authScoped, "password", () -> doWork());
+  void test4() throws Exception {
+    ScopedValue.runWhere(authScoped, "password", this::doWork);
   }
 
   void doWork() {
     try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
-      List<Future<String>> bodies = urls.stream()
+      List<StructuredTaskScope.Subtask<String>> bodies = urls.stream()
         .map(url -> (Callable<String>) () -> retrieveBody(url))
         .map(scope::fork)
         .toList();
@@ -130,7 +151,7 @@ class ScopedValues36 {
       scope.join();
 
       bodies.stream()
-        .map(Future::resultNow)
+        .map(StructuredTaskScope.Subtask::get)
         .forEach(System.out::println);
     } catch (InterruptedException e) {
         // do nothing

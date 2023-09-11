@@ -1,14 +1,11 @@
 package pro.tremblay.alljava.conf;
 
-import jdk.incubator.concurrent.StructuredTaskScope;
 import org.junit.jupiter.api.Test;
-import pro.tremblay.alljava.User;
 import pro.tremblay.alljava.UserDao;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import java.util.stream.Collectors;
+import java.util.concurrent.StructuredTaskScope;
 
 class StructuredConcurrency35 {
 
@@ -17,7 +14,7 @@ class StructuredConcurrency35 {
   @Test
   void test() throws Exception {
     try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
-      List<Future<Integer>> ages = UserDao.NAMES.stream()
+      List<StructuredTaskScope.Subtask<Integer>> ages = UserDao.NAMES.stream()
         .map(firstName -> scope.fork(() -> dao.find(firstName).getAge()))
         .toList();
 
@@ -25,7 +22,7 @@ class StructuredConcurrency35 {
       scope.throwIfFailed();
 
       ages.stream()
-        .map(Future::resultNow)
+        .map(StructuredTaskScope.Subtask::get)
         .forEachOrdered(System.out::println);
     }
   }

@@ -38,20 +38,20 @@
         <configuration>
           <compilerArgs>
             <arg>--enable-preview</arg>
-            <arg>--add-modules=jdk.incubator.vector,jdk.incubator.concurrent</arg>
+            <arg>--add-modules=jdk.incubator.vector</arg>
           </compilerArgs>
         </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
-          <argLine>--enable-preview --add-modules=jdk.incubator.vector,jdk.incubator.concurrent</argLine>
+          <argLine>--enable-preview --add-modules=jdk.incubator.vector</argLine>
         </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-javadoc-plugin</artifactId>
         <configuration>
-          <additionalOptions>--enable-preview --add-modules=jdk.incubator.vector,java.incubator.concurrent --snippet-path ${project.basedir}/src/test/java</additionalOptions>
+          <additionalOptions>--enable-preview --add-modules=jdk.incubator.vector --snippet-path ${project.basedir}/src/test/java</additionalOptions>
         </configuration>
       </plugin>
       <plugin>
