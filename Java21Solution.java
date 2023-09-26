@@ -1,3 +1,6 @@
+/*
+ * Copyright 2018-2023 Henri Tremblay.
+ */
 import java.math.BigDecimal;
 
 void main() {
