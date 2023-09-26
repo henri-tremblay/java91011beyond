@@ -3,7 +3,7 @@
 This is the support code for "Discover Modern Java", a course given every two
 months to [O'Reilly](https://www.oreilly.com/live-training/) subscribers.
 
-All examples are meant to be executed using Java 16.
+All examples are meant to be executed using Java 21.
 
 ## Update copyrights
 
