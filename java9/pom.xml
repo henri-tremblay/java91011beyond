@@ -16,20 +16,24 @@
   <artifactId>java9</artifactId>
   <packaging>pom</packaging>
 
+  <modules>
+    <module>app</module>
+    <module>lib</module>
+  </modules>
+
   <build>
     <plugins>
       <plugin>
         <groupId>com.mycila</groupId>
         <artifactId>license-maven-plugin</artifactId>
         <configuration>
-          <header>${project.basedir}/../header.txt</header>
+          <licenseSets>
+            <licenseSet>
+              <header>${basedir}/../header.txt</header>
+            </licenseSet>
+          </licenseSets>
         </configuration>
       </plugin>
     </plugins>
   </build>
-
-  <modules>
-    <module>app</module>
-    <module>lib</module>
-  </modules>
 </project>

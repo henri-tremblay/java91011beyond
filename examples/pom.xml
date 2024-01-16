@@ -58,10 +58,14 @@
         <groupId>com.mycila</groupId>
         <artifactId>license-maven-plugin</artifactId>
         <configuration>
-          <header>${project.basedir}/../header.txt</header>
-          <excludes>
-            <exclude>src/test/data/lines.txt</exclude>
-          </excludes>
+          <licenseSets>
+            <licenseSet>
+              <header>${basedir}/../header.txt</header>
+              <excludes>
+                <exclude>src/test/data/lines.txt</exclude>
+              </excludes>
+            </licenseSet>
+          </licenseSets>
         </configuration>
       </plugin>
     </plugins>

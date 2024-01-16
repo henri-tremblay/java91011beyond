@@ -111,12 +111,6 @@
               <inceptionYear>${project.inceptionYear}</inceptionYear>
               <year>${year}</year>
             </properties>
-            <excludes>
-              <exclude>**/myapp-*/**</exclude>
-              <exclude>**/myjre/**</exclude>
-              <exclude>**/*.bak</exclude>
-              <exclude>**/*.sh</exclude>
-            </excludes>
           </configuration>
         </plugin>
       </plugins>
@@ -168,7 +162,17 @@
         <groupId>com.mycila</groupId>
         <artifactId>license-maven-plugin</artifactId>
         <configuration>
-          <header>${project.basedir}/header.txt</header>
+          <licenseSets>
+            <licenseSet>
+              <header>${basedir}/header.txt</header>
+              <excludes>
+                <exclude>**/myapp-*/**</exclude>
+                <exclude>**/myjre/**</exclude>
+                <exclude>**/*.bak</exclude>
+                <exclude>**/*.sh</exclude>
+              </excludes>
+            </licenseSet>
+          </licenseSets>
         </configuration>
         <executions>
           <execution>

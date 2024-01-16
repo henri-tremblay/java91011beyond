@@ -28,12 +28,15 @@
 <!--          </archive>-->
 <!--        </configuration>-->
 <!--      </plugin>-->
-
       <plugin>
         <groupId>com.mycila</groupId>
         <artifactId>license-maven-plugin</artifactId>
         <configuration>
-          <header>${project.basedir}/../../header.txt</header>
+          <licenseSets>
+            <licenseSet>
+              <header>${basedir}/../../header.txt</header>
+            </licenseSet>
+          </licenseSets>
         </configuration>
       </plugin>
     </plugins>
