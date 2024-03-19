@@ -17,7 +17,7 @@ public class CodeSnippets32 {
   }
 
   /**
-   * This is how a putIfAbsent works on an Map.
+   * This is how a putIfAbsent works on a Map.
    * <pre>{@code
    * String s = map.putIfAbsent("key", "value");
    * if (s != null) {
@@ -31,7 +31,7 @@ public class CodeSnippets32 {
   }
 
   /**
-   * This is how a putIfAbsent works on an Map.
+   * This is how a putIfAbsent works on a Map.
    * {@snippet :
    * String s = map.putIfAbsent("key", "value");
    * if (s != null) {
@@ -45,7 +45,7 @@ public class CodeSnippets32 {
   }
 
   /**
-   * This is how a putIfAbsent works on an Map.
+   * This is how a putIfAbsent works on a Map.
    * {@snippet class="pro.tremblay.alljava.solutions.CodeSnippets32" region="example"}
    */
   @Test
