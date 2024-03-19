@@ -12,5 +12,5 @@ class DefaultCharset30 {
     System.out.println(System.getProperty("file.encoding"));
   }
 
-  // Will be UTF-8 now, used to be cp1259 on Windows
+  // Will be UTF-8 now, used to be cp1252 on Windows
 }
