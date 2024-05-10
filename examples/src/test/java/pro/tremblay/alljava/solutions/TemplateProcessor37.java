@@ -1,3 +1,6 @@
+/*
+ * Copyright 2018-2024 Henri Tremblay.
+ */
 package pro.tremblay.alljava.solutions;
 
 import org.junit.jupiter.api.Test;
