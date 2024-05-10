@@ -38,26 +38,22 @@ class ScopedValues36 {
 
   @Test
   public void test() throws Exception {
-    ExecutorService executorService = Executors.newVirtualThreadPerTaskExecutor();
+    try (ExecutorService executorService = Executors.newVirtualThreadPerTaskExecutor()) {
 
-    List<Future<String>> bodies = urls.stream()
-      .map(url -> executorService.submit(() -> {
-        return retrieveBody(url);
-      }))
-      .toList();
+      List<Future<String>> bodies = urls.stream()
+        .map(url -> executorService.submit(() -> retrieveBody(url)))
+        .toList();
 
-    bodies.stream()
-      .map(future -> {
-        try {
-          return future.get();
-        } catch (InterruptedException | ExecutionException e) {
-          throw new RuntimeException(e);
-        }
-      })
-      .forEach(System.out::println);
-
-    executorService.shutdownNow();
-    executorService.awaitTermination(1, TimeUnit.MINUTES);
+      bodies.stream()
+        .map(future -> {
+          try {
+            return future.get();
+          } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException(e);
+          }
+        })
+        .forEach(System.out::println);
+    }
   }
 
   private String retrieveBody(String url) throws IOException, InterruptedException {
