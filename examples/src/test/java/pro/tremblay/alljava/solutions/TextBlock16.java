@@ -12,7 +12,7 @@ class TextBlock16 {
   @Test
   void test() {
     String script = "function hello() {\n" +
-      "    print('\"Hello, world\"');\n" +
+      "    print(\"Hello, world\");\n" +
       "}\n" +
       "\n" +
       "hello();\n";
