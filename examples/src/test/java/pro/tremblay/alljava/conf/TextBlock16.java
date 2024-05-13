@@ -17,10 +17,10 @@ class TextBlock16 {
 
       hello();
       """;
-
-    try (Context context = Context.create("js")) {
-      context.eval("js", script);
-    }
+//
+//    try (Context context = Context.create("js")) {
+//      context.eval("js", script);
+//    }
 
     System.out.println(script);
   }
