@@ -16,14 +16,15 @@ class HttpClient24 {
 
   @Test
   void callMyWebsite() throws Exception {
-    HttpClient client = HttpClient.newHttpClient();
+    try (HttpClient client = HttpClient.newHttpClient()) {
 
-    HttpRequest get = HttpRequest.newBuilder(URI.create("https://blog.tremblay.pro"))
-      .GET().build();
+      HttpRequest get = HttpRequest.newBuilder(URI.create("https://blog.tremblay.pro"))
+        .GET().build();
 
-    CompletableFuture<HttpResponse<String>> response =
-      client.sendAsync(get, HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8));
+      CompletableFuture<HttpResponse<String>> response =
+        client.sendAsync(get, HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8));
 
-    System.out.println(response.get().body());
+      System.out.println(response.get().body());
+    }
   }
 }
