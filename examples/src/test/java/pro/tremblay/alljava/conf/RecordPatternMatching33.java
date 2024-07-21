@@ -11,12 +11,19 @@ public class RecordPatternMatching33 {
 
   sealed interface Shape permits Circle, Polygon {
     default double area() {
-      return switch (this) {
-        case Circle c -> Math.PI * c.radius() * c.radius();
-        case Square s -> s.side() * s.side();
-        case Rectangle r -> r.width() * r.height();
-        case Polygon ignored -> throw new UnsupportedOperationException("Polygons should override area()");
-      };
+      if (this instanceof Circle c) {
+        return Math.PI * c.radius() * c.radius();
+      }
+      if (this instanceof Square s) {
+        return s.side() * s.side();
+      }
+      if (this instanceof Rectangle r) {
+        return r.width() * r.height();
+      }
+      if (this instanceof Polygon) {
+        throw new UnsupportedOperationException("Polygons should override area()");
+      }
+      throw new UnsupportedOperationException("Unknown shape: " + getClass());
     }
   }
 
