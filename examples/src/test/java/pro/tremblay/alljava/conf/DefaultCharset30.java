@@ -13,4 +13,5 @@ class DefaultCharset30 {
   }
 
   // Will be UTF-8 now, used to be cp1252 on Windows
+  // -Dfile.encoding=COMPAT
 }
