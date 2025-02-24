@@ -35,7 +35,7 @@ public class RecordPatternMatching33 {
   record Square(double side) implements Polygon {
   }
 
-  class Rectangle implements Polygon {
+  static class Rectangle implements Polygon {
 
     private final double width;
     private final double height;
@@ -61,10 +61,10 @@ public class RecordPatternMatching33 {
 
   @Test
   public void test() {
-    assertThat(circonference(new Circle(2))).isEqualTo(4 * Math.PI);
+    assertThat(circumference(new Circle(2))).isEqualTo(4 * Math.PI);
   }
 
-  double circonference(Shape s) {
+  double circumference(Shape s) {
     if (s instanceof Circle c) {
       return 2 * Math.PI * c.radius();
     }
