@@ -1,5 +1,5 @@
 /*
- * Copyright 2018-2024 Henri Tremblay.
+ * Copyright 2018-2025 Henri Tremblay.
  */
 public class Java11 {
   public static void main(String[] args) {

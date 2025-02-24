@@ -1,10 +1,11 @@
 /*
- * Copyright 2018-2024 Henri Tremblay.
+ * Copyright 2018-2025 Henri Tremblay.
  */
 package pro.tremblay.alljava.conf;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.TimeUnit;
 
 public class VirtualThread34 {
@@ -26,4 +27,5 @@ public class VirtualThread34 {
   // run with threads
   // startVirtualThread
   // pool, executor
+  // VirtualThread.DEFAULT_SCHEDULER
 }
