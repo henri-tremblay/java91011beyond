@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.SequencedCollection;
 
-public class SequencedCollection36 {
+public class SequencedCollection39 {
 
   @Test
   public void test() {
@@ -24,3 +24,8 @@ public class SequencedCollection36 {
     System.out.println(String.join(" ", list));
   }
 }
+
+// show new methods quickly
+// reverse doesn't reverse
+// show the interface
+// SequencedSet, SequenceMap, ...
