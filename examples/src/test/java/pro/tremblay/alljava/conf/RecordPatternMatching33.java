@@ -6,6 +6,7 @@ package pro.tremblay.alljava.conf;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
 
 public class RecordPatternMatching33 {
 
@@ -79,6 +80,8 @@ public class RecordPatternMatching33 {
     if (pair instanceof Pair<Shape, Shape> p) {
 //      System.out.println(p.radius());
 //      System.out.println(s.side());
+    } else {
+      fail("Should be a square");
     }
   }
 
