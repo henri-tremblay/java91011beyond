@@ -53,6 +53,19 @@ public class CodeSnippets32 {
 
   }
 
+  /// This is how a putIfAbsent works on a Map.
+  ///
+  /// ```
+  /// String s = map.putIfAbsent("key", "value");
+  /// if (s != null) {
+  ///   return s;
+  /// }
+  /// return "value";
+  /// ```
+  @Test void test3() {
+
+  }
+
   String howPutIfAbsentWorks() {
     // @start region="example"
     String s = map.putIfAbsent("key", "value");

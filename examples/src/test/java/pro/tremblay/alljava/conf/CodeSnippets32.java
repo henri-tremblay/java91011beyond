@@ -30,5 +30,5 @@ public class CodeSnippets32 {
   // <pre>{@code
   // {@snippet ...}
   // {@snippet class="pro.tremblay.alljava.solutions.CodeSnippets32" region="example"}
-
+  // Java 23 markdown
 }
