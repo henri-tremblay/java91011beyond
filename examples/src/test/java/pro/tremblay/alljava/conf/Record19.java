@@ -95,6 +95,7 @@ class Record19 {
   }
 }
 
+// equals: return o instanceof Point point && x == point.x && y == point.y;
 // Immutable
 // Final
 // Can add and override methods
