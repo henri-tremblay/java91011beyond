@@ -122,7 +122,7 @@ class ScopedValues36 {
     ExecutorService executorService = Executors.newVirtualThreadPerTaskExecutor();
 
     List<Future<String>> bodies = urls.stream()
-        .map(url -> executorService.submit(() -> ScopedValue.callWhere(authScoped, "password", () -> retrieveBody(url))))
+        .map(url -> executorService.submit(() -> ScopedValue.where(authScoped, "password").call(() -> retrieveBody(url))))
         .toList();
 
     bodies.stream()
@@ -141,7 +141,7 @@ class ScopedValues36 {
 
   @Test
   void test4() throws Exception {
-    ScopedValue.runWhere(authScoped, "password", this::doWork);
+    ScopedValue.where(authScoped, "password").run(this::doWork);
   }
 
   void doWork() {
