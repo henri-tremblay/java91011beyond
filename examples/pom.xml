@@ -17,10 +17,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.graalvm.js</groupId>
-      <artifactId>js</artifactId>
-      <version>23.0.8</version>
-      <scope>provided</scope>
+      <groupId>org.graalvm.polyglot</groupId>
+      <artifactId>polyglot</artifactId>
+      <version>24.0.1</version>
     </dependency>
 
     <dependency>
