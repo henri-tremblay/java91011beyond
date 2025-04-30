@@ -38,6 +38,7 @@
           <compilerArgs>
             <arg>--enable-preview</arg>
             <arg>--add-modules=jdk.incubator.vector</arg>
+            <arg>-Xlint:-preview</arg>
           </compilerArgs>
         </configuration>
       </plugin>
