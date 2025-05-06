@@ -1,7 +1,6 @@
 /*
  * Copyright 2018-2025 Henri Tremblay.
  */
-import java.math.BigDecimal;
 
 public class UnnamedClasses40 {
 
@@ -11,7 +10,9 @@ public class UnnamedClasses40 {
 
 }
 
+// remove class
 // remove public
 // remove args
 // remove static
-// remove class
+// automatic imports
+// println
