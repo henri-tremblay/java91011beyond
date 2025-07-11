@@ -29,36 +29,9 @@ public class RecordPatternMatching33 {
   }
 
   record Circle(double radius) implements Shape {}
-
-  non-sealed interface Polygon extends Shape {
-  }
-
-  record Square(double side) implements Polygon {
-  }
-
-  static class Rectangle implements Polygon {
-
-    private final double width;
-    private final double height;
-
-    public Rectangle(double width, double height) {
-      this.width = width;
-      this.height = height;
-    }
-
-    public double width() {
-      return width;
-    }
-
-    public double height() {
-      return height;
-    }
-
-    @Override
-    public double area() {
-      return width * height;
-    }
-  }
+  non-sealed interface Polygon extends Shape {}
+  record Square(double side) implements Polygon {}
+  record Rectangle(double width, double height) implements Polygon {}
 
   @Test
   public void test() {
@@ -77,9 +50,11 @@ public class RecordPatternMatching33 {
   @Test
   public void nesting() {
     Pair<Shape, Shape> pair = new Pair<>(new Circle(2), new Square(2));
-    if (pair instanceof Pair<Shape, Shape> p) {
-//      System.out.println(p.radius());
-//      System.out.println(s.side());
+    if (pair instanceof Pair<Shape, Shape> p && p.s1 instanceof Circle c && p.s2 instanceof Square s) {
+      double radius = c.radius();
+      double side = s.side();
+      System.out.println(radius);
+      System.out.println(side);
     } else {
       fail("Should be a square");
     }
