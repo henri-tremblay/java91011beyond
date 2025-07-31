@@ -145,7 +145,7 @@ class ScopedValues36 {
   }
 
   void doWork() {
-    try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
+    try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.allSuccessfulOrThrow())) {
       List<StructuredTaskScope.Subtask<String>> bodies = urls.stream()
         .map(url -> (Callable<String>) () -> retrieveBody(url))
         .map(scope::fork)

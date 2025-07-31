@@ -16,13 +16,12 @@ class StructuredConcurrency35 {
 
   @Test
   void test() throws Exception {
-    try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
+    try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.awaitAllSuccessfulOrThrow())) {
       List<StructuredTaskScope.Subtask<Integer>> ages = UserDao.NAMES.stream()
         .map(firstName -> scope.fork(() -> dao.find(firstName).getAge()))
         .toList();
 
       scope.join();
-      scope.throwIfFailed();
 
       ages.stream()
         .map(StructuredTaskScope.Subtask::get)
