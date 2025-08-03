@@ -17,11 +17,14 @@ jobs:
     timeout-minutes: 2
     steps:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4.2.2
+    - name: Download Custom JDK
+      run: |
+        wget https://download.java.net/java/early_access/jdk25/34/GPL/openjdk-25-ea+34_linux-aarch64_bin.tar.gz
     - name: Set up JDK
       uses: actions/setup-java@c5195efecf7bdfc987ee8bae7a71cb8b11521c00 #v4.7.1
       with:
         java-version: '25'
         distribution: 'jdkfile'
-        jdkFile: https://download.java.net/java/early_access/jdk25/34/GPL/openjdk-25-ea+34_linux-aarch64_bin.tar.gz
+        jdkFile: openjdk-25-ea+34_linux-aarch64_bin.tar.gz
     - name: Build
       run: ./mvnw --no-transfer-progress -B clean verify --file pom.xml
