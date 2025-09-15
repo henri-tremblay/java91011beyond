@@ -18,6 +18,7 @@
 
   <modules>
     <module>app</module>
+    <module>api</module>
     <module>lib</module>
   </modules>
 

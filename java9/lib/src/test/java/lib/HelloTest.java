@@ -3,6 +3,7 @@
  */
 package lib;
 
+import api.Hello;
 import org.junit.jupiter.api.Test;
 
 class HelloTest {

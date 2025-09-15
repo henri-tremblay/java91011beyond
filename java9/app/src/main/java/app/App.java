@@ -3,12 +3,11 @@
  */
 package app;
 
-import lib.Hello;
+import api.Hello;
 import lib.HelloStdout;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
-import java.lang.reflect.Field;
 import java.util.ServiceLoader;
 
 public class App {
@@ -24,7 +23,9 @@ public class App {
     Hello hello = new HelloStdout();
     hello.helloWorld();
 
-//    ServiceLoader<Hello> serviceLoader = ServiceLoader.load(Hello.class);
-//    serviceLoader.findFirst().ifPresent(Hello::helloWorld);
+    ServiceLoader<Hello> serviceLoader = ServiceLoader.load(Hello.class);
+    serviceLoader.findFirst().ifPresent(Hello::helloWorld);
   }
 }
+
+// import module pro.tremblay.java9.api;

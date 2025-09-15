@@ -16,6 +16,14 @@
 
   <artifactId>java9-lib</artifactId>
 
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>java9-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+
   <build>
     <plugins>
 <!--      <plugin>-->

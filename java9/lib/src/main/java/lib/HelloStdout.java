@@ -3,6 +3,8 @@
  */
 package lib;
 
+import api.Hello;
+
 public class HelloStdout implements Hello {
 
   private static String name = "world";
