@@ -1,3 +1,6 @@
+/*
+ * Copyright 2018-2025 Henri Tremblay.
+ */
 package pro.tremblay.alljava.conf;
 
 import jdk.jfr.Category;
