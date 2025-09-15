@@ -4,3 +4,4 @@ target/
 /~*.pptx
 /*.aot
 /*.aotconf
+*.jfr
