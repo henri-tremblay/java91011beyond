@@ -19,12 +19,12 @@ jobs:
     - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 #v5.0.0
     - name: Download Custom JDK
       run: |
-        wget https://download.java.net/java/early_access/jdk25/34/GPL/openjdk-25-ea+34_linux-x64_bin.tar.gz
+        wget https://download.java.net/java/GA/jdk25/bd75d5f9689641da8e1daabeccb5528b/36/GPL/openjdk-25_linux-x64_bin.tar.gz
     - name: Set up JDK
       uses: actions/setup-java@dded0888837ed1f317902acf8a20df0ad188d165 #v5.0.0
       with:
         java-version: '25'
         distribution: 'jdkfile'
-        jdkFile: openjdk-25-ea+34_linux-x64_bin.tar.gz
+        jdkFile: openjdk-25_linux-x64_bin.tar.gz
     - name: Build
       run: ./mvnw --no-transfer-progress -B clean verify --file pom.xml
