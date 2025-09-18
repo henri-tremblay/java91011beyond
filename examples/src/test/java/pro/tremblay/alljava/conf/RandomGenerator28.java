@@ -25,6 +25,7 @@ class RandomGenerator28 {
 // generator = RandomGenerator.of("L128X1024MixRandom"); uses service loader
 // not synchronized
 // not thread-safe
+// RandomGenerator.SplittableGenerator.split()
 // LeapableGenerator leaps and JumpableGenerator jumps
-//
+
 

@@ -7,3 +7,8 @@ public class Java11 {
     System.out.println("Hello Pearson");
   }
 }
+
+// no array
+// no public static
+// no class
+// IO.

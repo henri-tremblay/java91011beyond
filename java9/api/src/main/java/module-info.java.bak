@@ -1,0 +1,7 @@
+/*
+ * Copyright 2018-2025 Henri Tremblay.
+ */
+
+module pro.tremblay.java9.api {
+  exports api;
+}

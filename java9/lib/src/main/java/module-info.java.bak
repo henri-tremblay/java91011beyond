@@ -1,0 +1,13 @@
+/*
+ * Copyright 2018-2025 Henri Tremblay.
+ */
+
+import api.Hello;
+import lib.HelloStdout;
+
+module pro.tremblay.java9.lib {
+  exports lib;
+  requires transitive pro.tremblay.java9.api;
+//  opens lib;
+//  provides Hello with HelloStdout;
+}

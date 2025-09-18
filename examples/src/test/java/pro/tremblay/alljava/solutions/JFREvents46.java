@@ -40,7 +40,7 @@ public class JFREvents46 {
           rs.onEvent("demo.MapHit", System.out::println);
           rs.start();
         }
-      });
+    });
 
     List<String> in = new ArrayList<>();
     for (int i = 0; i < Integer.MAX_VALUE; i++) {
@@ -72,5 +72,3 @@ class MapHitEvent extends Event {
 // jfr summary app.jfr
 // jfr print --events demo.MapHit app.jfr
 
-// MBeanServerConnection conn = connect(host, port);
-// try (EventStream es = new RemoteRecordingStream(conn)) {

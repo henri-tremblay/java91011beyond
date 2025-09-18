@@ -58,7 +58,7 @@ class MapHitEvent extends Event {
 
 // PID=$(jcmd -l | grep JFREvents46 | cut -d' ' -f1)
 // jcmd $PID JFR.start name=on_demand settings=profile
-// jfr stream --pid $PID --events demo.MapHit
 // jcmd $PID JFR.dump name=on_demand filename=app.jfr
 // jfr summary app.jfr
 // jfr print --events demo.MapHit app.jfr
+// try (var rs = new RecordingStream(c)) {

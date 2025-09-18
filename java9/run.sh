@@ -6,7 +6,7 @@
 
 java -cp app/target/classes:api/target/classes:lib/target/classes app.App
 
-#java --module-path app/target:api/target/classes:lib/target -m java9.app/app.App
+#java --module-path app/target:api/target:lib/target -m java9.app/app.App
 
 #java --module-path app/target:api/target:lib/target -m pro.tremblay.java9.app/app.App
 

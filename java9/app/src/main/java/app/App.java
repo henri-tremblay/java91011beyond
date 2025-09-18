@@ -3,6 +3,7 @@
  */
 package app;
 
+//import module pro.tremblay.java9.api;
 import api.Hello;
 import lib.HelloStdout;
 
@@ -23,8 +24,8 @@ public class App {
     Hello hello = new HelloStdout();
     hello.helloWorld();
 
-    ServiceLoader<Hello> serviceLoader = ServiceLoader.load(Hello.class);
-    serviceLoader.findFirst().ifPresent(Hello::helloWorld);
+//    ServiceLoader<Hello> serviceLoader = ServiceLoader.load(Hello.class);
+//    serviceLoader.findFirst().ifPresent(Hello::helloWorld);
   }
 }
 
