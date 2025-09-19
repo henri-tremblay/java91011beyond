@@ -70,3 +70,6 @@ class StatementBeforeSuper49 {
   }
 
 }
+
+// move super() down
+// put code above this()
