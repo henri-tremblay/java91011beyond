@@ -22,9 +22,10 @@
       <version>25.0.0</version>
     </dependency>
     <dependency>
-      <groupId>org.graalvm.polyglot</groupId>
-      <artifactId>js</artifactId>
+      <groupId>org.graalvm.js</groupId>
+      <artifactId>js-language</artifactId>
       <version>25.0.0</version>
+      <scope>runtime</scope>
     </dependency>
 
     <dependency>
