@@ -24,7 +24,7 @@
     <dependency>
       <groupId>org.graalvm.js</groupId>
       <artifactId>js-language</artifactId>
-      <version>25.0.0</version>
+      <version>25.0.1</version>
       <scope>runtime</scope>
     </dependency>
 
