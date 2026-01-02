@@ -1,7 +1,6 @@
 /*
- * Copyright 2018-2025 Henri Tremblay.
+ * Copyright 2018-2026 Henri Tremblay.
  */
-
 public class UnnamedClasses40 {
 
   public static void main(String[] args) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018-2025 Henri Tremblay.
+ * Copyright 2018-2026 Henri Tremblay.
  */
 package pro.tremblay.alljava;
 
