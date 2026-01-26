@@ -10,13 +10,11 @@ class TextBlock16 {
 
   @Test
   void test() {
-    String script = """
-      function hello() {
-          print("Hello, world");
-      }
-
-      hello();
-      """;
+    String script = "function hello() {\n" +
+                    "    print(\"Hello, world\");\n" +
+                    "}\n" +
+                    "\n" +
+                    "hello();\n";
 
     try (Context context = Context.create("js")) {
       context.eval("js", script);
