@@ -10,21 +10,23 @@ import java.util.List;
 import java.util.concurrent.Future;
 import java.util.concurrent.StructuredTaskScope;
 
+import static java.util.concurrent.StructuredTaskScope.*;
+
 class StructuredConcurrency35 {
 
   private final UserDao dao = new UserDao();
 
   @Test
   void test() throws Exception {
-    try (var scope = StructuredTaskScope.open(StructuredTaskScope.Joiner.awaitAllSuccessfulOrThrow())) {
-      List<StructuredTaskScope.Subtask<Integer>> ages = UserDao.NAMES.stream()
+    try (var scope = open(Joiner.awaitAllSuccessfulOrThrow())) {
+      List<Subtask<Integer>> ages = UserDao.NAMES.stream()
         .map(firstName -> scope.fork(() -> dao.find(firstName).getAge()))
         .toList();
 
       scope.join();
 
       ages.stream()
-        .map(StructuredTaskScope.Subtask::get)
+        .map(Subtask::get)
         .forEachOrdered(System.out::println);
     }
   }
